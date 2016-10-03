@@ -35,7 +35,15 @@ def clientthread():
 	clock=0
 	def local_event():
 		r=randrange(1,6)		
-
+	def send_message():
+		ra=randrange(0,length(nodelist))
+		nodeport=nodelist[ra]
+		for i in range(0,len(line)):
+			if line[i].strip().split(' ')[1]==nodeport:
+				nodeID=line[i].strip().split(' ')[0]
+		s.connect(host,nodeport)
+		msg=ID+' '+l
+		s.send(bytes(info,'utf-8'))
 
 
 
